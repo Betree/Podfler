@@ -97,6 +97,7 @@ void loop(void)
 
         // Get response
         aJsonObject* responseJson = processCommand(charBuffer);
+        //TODO: Delete JSON Object
         String response = aJson.print(responseJson);
         Serial.println(response);
 
