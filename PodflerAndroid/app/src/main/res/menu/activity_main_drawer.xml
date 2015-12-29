@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="@string/my_plants">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:title="Plant 1" />
+                <item android:title="Plant 2" />
+            </group>
+        </menu>
+    </item>
+
+
+    <group>
+        <item
+            android:id="@+id/nav_add_plant"
+            android:icon="@drawable/ic_menu_plus"
+            android:title="@string/add_plant_watcher" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/action_settings" />
+    </group>
+
+
+</menu>
