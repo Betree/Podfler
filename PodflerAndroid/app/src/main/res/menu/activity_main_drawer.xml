@@ -16,7 +16,7 @@
         <item
             android:id="@+id/nav_add_plant"
             android:icon="@drawable/ic_menu_plus"
-            android:title="@string/add_plant_watcher" />
+            android:title="@string/new_plant_watcher" />
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_menu_manage"
