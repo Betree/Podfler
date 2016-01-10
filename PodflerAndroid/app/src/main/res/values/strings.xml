@@ -11,4 +11,8 @@
     <string name="ip_address">IP address</string>
     <string name="name">Name</string>
     <string name="add_plant_watcher">Add plant watcher</string>
+    <string name="air_humidity">Air humidity :</string>
+    <string name="air_temperature">Air temperature :</string>
+    <string name="ground_humidity">Ground humidity :</string>
+    <string name="luminosity">Luminosity :</string>
 </resources>

@@ -10,9 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private PlantWatchersManager plantWatchersManager;
@@ -36,6 +34,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.plantWatchersManager = new PlantWatchersManager(this);
         ListView drawerList = (ListView) findViewById(R.id.nav_plants_list);
         drawerList.setAdapter(new PlantWatcherAdapter(this, this.plantWatchersManager.getArray()));
+
+        this.renderPlantWatcher(this.plantWatchersManager.getList().get(0));
+    }
+
+    private void renderPlantWatcher(PlantWatcher plantWatcher) {
+        ((TextView) findViewById(R.id.plant_name)).setText(plantWatcher.getName());
+        ((TextView) findViewById(R.id.value_air_humidity)).setText(String.valueOf(plantWatcher.getAirHumidity()));
+        ((TextView) findViewById(R.id.value_air_temperature)).setText(String.valueOf(plantWatcher.getAirTemperature()));
+        ((TextView) findViewById(R.id.value_ground_humidity)).setText(String.valueOf(plantWatcher.getGroundHumidity()));
+        ((TextView) findViewById(R.id.value_luminosity)).setText(String.valueOf(plantWatcher.getLuminosity()));
     }
 
     @Override
