@@ -1,9 +1,11 @@
 package com.benjaminpiouffle.podfler;
 
+import java.io.Serializable;
+
 /**
  * Created by piouffb on 08/01/16.
  */
-public class PlantWatcher {
+public class PlantWatcher implements Serializable {
     private String name;
     private String ip;
 

@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private PlantWatchersManager plantWatchersManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,14 +32,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        // Populate fake data
-        List<PlantWatcher> plants = new ArrayList<>();
-        plants.add(new PlantWatcher("Plant 1", "xx.xx.xx.xx"));
-        plants.add(new PlantWatcher("Plant 2", "xx.xx.xx.xx"));
-
         // Add plants to menu
+        this.plantWatchersManager = new PlantWatchersManager(this);
         ListView drawerList = (ListView) findViewById(R.id.nav_plants_list);
-        drawerList.setAdapter(new PlantWatcherAdapter(this, plants.toArray(new PlantWatcher[0])));
+        drawerList.setAdapter(new PlantWatcherAdapter(this, this.plantWatchersManager.getArray()));
     }
 
     @Override
