@@ -26,13 +26,19 @@ public class PlantWatchersManager {
 
         // Load plants
         this.plantWatchers = this.load();
+    }
 
-        // If not plant exists, create one
-        if (this.plantWatchers == null || this.plantWatchers.size() == 0) {
-            this.plantWatchers = new ArrayList<>();
-            this.plantWatchers.add(new PlantWatcher("[Room] Baobab", "xx.xx.xx.xx"));
-            this.save();
-        }
+    public final boolean addPlant(String name, String ip) {
+        return this.plantWatchers.add(new PlantWatcher(name, ip)) && this.save();
+    }
+
+    public final List<PlantWatcher> getList() {
+        return this.plantWatchers;
+    }
+
+    public final PlantWatcher[] getArray() {
+        PlantWatcher[] watchersArray = new PlantWatcher[this.plantWatchers.size()];
+        return this.plantWatchers.toArray(watchersArray);
     }
 
     private List<PlantWatcher> load() {
@@ -56,7 +62,7 @@ public class PlantWatchersManager {
         return plantWatchers;
     }
 
-    private void save() {
+    private boolean save() {
         try {
             FileOutputStream outputStream = this.context.openFileOutput(SAVE_FILENAME, Context.MODE_PRIVATE);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
@@ -65,15 +71,8 @@ public class PlantWatchersManager {
             outputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
-    }
-
-    public final List<PlantWatcher> getList() {
-        return this.plantWatchers;
-    }
-
-    public final PlantWatcher[] getArray() {
-        PlantWatcher[] watchersArray = new PlantWatcher[this.plantWatchers.size()];
-        return this.plantWatchers.toArray(watchersArray);
+        return true;
     }
 }

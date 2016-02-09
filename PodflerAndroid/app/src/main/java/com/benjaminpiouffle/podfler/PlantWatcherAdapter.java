@@ -1,10 +1,12 @@
 package com.benjaminpiouffle.podfler;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.List;
 public class PlantWatcherAdapter extends ArrayAdapter<PlantWatcher> {
     private final Context context;
     private final PlantWatcher[] watchers;
+    private int selected = 0;
 
     public PlantWatcherAdapter(Context context, PlantWatcher[] watchers) {
         super(context, -1, watchers);
@@ -28,6 +31,12 @@ public class PlantWatcherAdapter extends ArrayAdapter<PlantWatcher> {
         View rowView = inflater.inflate(android.R.layout.simple_list_item_1, parent, false);
         TextView textView = (TextView) rowView.findViewById(android.R.id.text1);
         textView.setText(this.watchers[position].getName());
+        if (position == selected)
+            rowView.setBackgroundColor(Color.LTGRAY);
         return rowView;
+    }
+
+    public void setSelected(int position) {
+        this.selected = position;
     }
 }

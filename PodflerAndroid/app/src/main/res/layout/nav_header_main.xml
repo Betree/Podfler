@@ -15,16 +15,18 @@
     android:weightSum="1">
 
 
-    <LinearLayout
+    <FrameLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:gravity="bottom">
+        android:layout_width="fill_parent"
+        android:layout_height="111dp"
+        android:gravity="bottom"
+        android:layout_gravity="bottom">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:layout_gravity="bottom">
 
             <TextView
                 android:layout_width="93dp"
@@ -33,23 +35,24 @@
                 android:text="@string/app_name"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 style="@style/Base.TextAppearance.AppCompat.Headline"
-                android:layout_gravity="top"
-                android:gravity="top|fill_vertical" />
+                android:gravity="top|fill_vertical"
+                android:layout_gravity="bottom"/>
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="124dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Benjamin Piouffle" />
+                android:text="Benjamin Piouffle"
+                android:layout_gravity="bottom"/>
         </LinearLayout>
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="104dp"
+            android:layout_height="97dp"
             android:id="@+id/imageView"
-            android:layout_gravity="bottom|right"
+            android:layout_gravity="top|right"
             android:src="@drawable/ic_launcher"
             />
-    </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>

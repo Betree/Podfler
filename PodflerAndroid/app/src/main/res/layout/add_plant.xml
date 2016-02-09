@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal|top">
+        android:layout_gravity="center_horizontal|top"
+        android:layout_margin="20dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -17,17 +17,18 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/name"
-                android:id="@+id/textView3"
+                android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"/>
 
             <EditText
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText"
-                android:layout_gravity="right"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true" />
+                    android:id="@+id/inputPlantName"
+                    android:layout_gravity="right"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -39,26 +40,27 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="@string/ip_address"
-                    android:id="@+id/textView2"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
 
             <EditText
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText2"
+                android:id="@+id/inputPlantIP"
                 android:layout_gravity="top|right"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true" />
+                android:layout_alignParentRight="true"
+                android:gravity="right"/>
         </RelativeLayout>
 
     </LinearLayout>
 
     <Button
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="123dp"
         android:text="@string/add_plant_watcher"
-        android:id="@+id/button2"
+        android:id="@+id/add_plant_confirm_button"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
