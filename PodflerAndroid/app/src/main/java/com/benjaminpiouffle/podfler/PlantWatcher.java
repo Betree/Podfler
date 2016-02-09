@@ -22,36 +22,27 @@ public class PlantWatcher implements Serializable {
         this.luminosity = 0.0;
     }
 
+    public boolean requestNewData() {
+        return false;
+    }
+
     public double getAirTemperature() {
         return airTemperature;
     }
 
-    public void setAirTemperature(double airTemperature) {
-        this.airTemperature = airTemperature;
-    }
 
     public double getAirHumidity() {
         return airHumidity;
     }
 
-    public void setAirHumidity(double airHumidity) {
-        this.airHumidity = airHumidity;
-    }
 
     public double getGroundHumidity() {
         return groundHumidity;
     }
 
-    public void setGroundHumidity(double groundHumidity) {
-        this.groundHumidity = groundHumidity;
-    }
 
     public double getLuminosity() {
         return luminosity;
-    }
-
-    public void setLuminosity(double luminosity) {
-        this.luminosity = luminosity;
     }
 
     public String getName() {
